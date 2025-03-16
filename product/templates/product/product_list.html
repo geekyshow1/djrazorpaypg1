@@ -1,0 +1,16 @@
+{% extends "product/base.html" %}
+{% block content %}
+<div class="container mx-auto p-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {% for product in products %}
+          <div class="bg-white shadow-lg rounded-lg p-6">
+              <h2 class="text-xl font-semibold">{{ product.name }}</h2>
+              <p class="text-gray-600">{{ product.description }}</p>
+              <p class="text-lg font-bold text-blue-600">₹{{ product.price }}</p>
+              <a href="/checkout/{{ product.id }}/" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-lg">Buy Now</a>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock content %}
+
